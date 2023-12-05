@@ -55,3 +55,29 @@ const posts = [
         "created": "2021-03-05"
     }
 ];
+
+console.log(posts);
+
+const myCard = document.getElementById("container");
+
+posts.forEach(element => {
+
+    const createPost = `
+    <div id="post">
+        <div class="post__header">
+            <div class="post-meta">                    
+                <div class="post-meta__icon">
+                    <img class="profile-pic" src="${element.author.image}">                    
+                </div>
+                <div class="post-meta__data">
+                    <div class="post-meta__author">${element.author.name}</div>
+                    <div class="post-meta__time">${element.created}</div>
+                </div>                    
+            </div>
+        </div>
+    </div>
+        `
+
+    myCard.innerHTML += createPost;
+
+});
